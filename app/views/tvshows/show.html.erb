@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tvshow.name %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @tvshow.time.try(:strftime, "%H:%M") %>
+</p>
+
+<%= link_to 'Edit', edit_tvshow_path(@tvshow) %> |
+<%= link_to 'Back', tvshows_path %>
