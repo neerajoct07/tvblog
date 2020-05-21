@@ -1,5 +1,6 @@
 class TvshowsController < ApplicationController
   before_action :set_tvshow, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
   # GET /tvshows
   # GET /tvshows.json
   def index
@@ -76,7 +77,7 @@ class TvshowsController < ApplicationController
       @channels = Channel.all
     end
     def tvshow_params
-      params.require(:tvshow).permit(:name, :time, :channel_id)
+      params.require(:tvshow).permit(:name, :time, :channel_id, :favourite)
     end
 
     # Only allow a list of trusted parameters through.

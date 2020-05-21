@@ -9,6 +9,14 @@
   <strong>Time:</strong>
   <%= @tvshow.time.try(:strftime, "%H:%M") %>
 </p>
+<p>
+  <strong>Channel:</strong>
+  <%= @tvshow.channel.name %>
+</p>
+<p>
+  <strong>Favourite	:</strong>
+  <%= @tvshow.favourite	 %>
+</p>
 
 <%= link_to 'Edit', edit_tvshow_path(@tvshow) %> |
 <%= link_to 'Back', tvshows_path %>

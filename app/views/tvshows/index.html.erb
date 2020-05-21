@@ -10,6 +10,7 @@
       <th>Name</th>
       <th>Time</th>
       <th>Channel</th>
+      <th>Favourite</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= tvshow.name %></td>
         <td><%= tvshow.time.try(:strftime, "%H:%M") %></td>
         <td><%= tvshow.channel.try(:name) %></td>
+         <td><%= tvshow.favourite %></td>
         <td><%= link_to 'Show', tvshow %></td>
         <td><%= link_to 'Edit', edit_tvshow_path(tvshow) %></td>
         <td><%= link_to 'Destroy', tvshow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
